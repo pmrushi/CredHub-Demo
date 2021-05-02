@@ -1,14 +1,21 @@
 # CredHub-Demo
 CredHub Demo
 
+Run 
 ````
-$ ../gradlew assemble
+./gradlew bootRun
+gradlew.bat bootRun
+````
+
+
+Push
+````
+$ ./gradlew assemble
 $ cf push -f manifest.yml
 ````
 
-After deploying the application, send an HTTP request to the demo application with this command:
-
+Create CredHub service with values needed for application
 ````
-$ curl -X POST https://spring-credhub-demo.cf.example.com/test -d @demo.json -H "Content-type: application/json"
+cf create-service credhub default mycredhub -c '{"mySecretKey":"secretkey123"}'
 ````
 
