@@ -4,3 +4,5 @@ applications:
     services: [mycredhub]
     buildpack: java_buildpack_offline
     path: libs/credHubDemo-0.0.1-SNAPSHOT.jar
+    env:
+      SPRING_CREDHUB_URL: https://credhub.service.cf.internal:8844
