@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.credhub:spring-credhub-starter:2.1.1.RELEASE")
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
