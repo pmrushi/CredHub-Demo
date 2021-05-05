@@ -1,19 +1,22 @@
 package com.example.credhub.controller;
 
-import com.example.credhub.CredHubProperties;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.credhub.CredHubProps;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CredHubController {
 
-    @Autowired
-    private CredHubProperties credHubProperties;
+    private CredHubProps credHubProps;
 
-    @GetMapping("/")
+    public CredHubController(CredHubProps credHubProps) {
+        this.credHubProps = credHubProps;
+    }
+
+    @GetMapping("/prop")
     public String credentials() {
-        return credHubProperties.mySecretKey;
+        String key = credHubProps.mysecretkey;
+        return key == null ? "Not Found" : key;
     }
 
 }
