@@ -23,11 +23,18 @@ $ cf push -f manifest.yml
 
 Create CredHub service with values needed for application
 ````
-cf create-service credhub default mycredhub -c '{"mySecretKey":"secretkey123"}'
+cf create-service credhub default mycredhub -c '{"mySecretKey":"secretkey123", "myKey":"mykey123"}'
 ````
 
+Access
+
+```
+http://localhost:8080/credhub/keys
+```
+Response
+```
 {
-  "client_id": "demo-id",
-  "client_secret": "demo-secret",
-  "uri": "https://example.com"
+  mySecretKey: "secretkey123",
+  myKey: "mykey123"
 }
+```
