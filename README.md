@@ -26,6 +26,11 @@ Create CredHub service with values needed for application
 cf create-service credhub default mycredhub -c '{"mySecretKey":"secretkey123", "myKey":"mykey123"}'
 ````
 
+Update CredHub service with values needed for application
+````
+cf update-service mycredhub -c '{"mySecretKey":"secretkey123", "myKey":"mykey123"}'
+````
+
 Access
 
 ```
