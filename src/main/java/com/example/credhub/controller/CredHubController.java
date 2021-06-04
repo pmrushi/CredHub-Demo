@@ -15,6 +15,7 @@ public class CredHubController {
 
     @GetMapping("/keys")
     public CredHubProps credentials() {
+        System.out.println(credHubProps.toString());
         return credHubProps;
     }
 }
